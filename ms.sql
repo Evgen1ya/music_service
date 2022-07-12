@@ -48,3 +48,6 @@ create table if not exists Digest_traks (
 
 alter table Albums add constraint fk_albums foreign key(track) references Tracks (id);
 alter table Tracks add constraint fk_tracks foreign key(album) references Albums (id);
+ALTER albums drop column tracks;
+ALTER tracks drop column duration;
+ALTER tracks add column duration time;

@@ -10,7 +10,7 @@ join performers_album pa on p.id = pa.performer_id
 join albums a on pa.album_id = a.id
 where year_of_issue != '2020';
 
-select count (distinct year_of_issue) from tracks t
+select count (tracks_name) from tracks t
 join albums a on album = a.id
 where year_of_issue between 2019 and 2020;
 

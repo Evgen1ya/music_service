@@ -1,4 +1,6 @@
-select count(*) from performers_genre;
+select genre_name, count(distinct performer_id) from genres g 
+join performers_genre pg on g.id = pg.genre_id
+group by genre_name;
 
 select AVG(duration) from tracks
 group by album;
@@ -38,10 +40,3 @@ where duration = (select min(duration) from tracks t2 );
 select albums_name, count(t.id) > count(t.id) from albums a 
 join tracks t on a.id = t.album 
 group by albums_name;
-
-
-
-
-
-
-

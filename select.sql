@@ -15,6 +15,6 @@ select performers_name from performers
 where performers_name not like '% %';
 
 select tracks_name from tracks
-where tracks_name in ('Skin');  
+where tracks_name like ('%Skin%');  
 
 

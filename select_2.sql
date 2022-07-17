@@ -40,6 +40,7 @@ join performers_album pa on p.id = pa.performer_id
 join tracks t on pa.album_id = t.album 
 where duration = (select min(duration) from tracks t2 );
 
-select albums_name, count(t.id) > count(t.id) from albums a 
+select albums_name, count(album) from albums a 
 join tracks t on a.id = t.album 
-group by albums_name;
+group by albums_name
+having count (t.tracks_name) = (select count(album) from tracks group by album order by count(album) limit 1);
